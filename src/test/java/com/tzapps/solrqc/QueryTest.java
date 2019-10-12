@@ -26,7 +26,7 @@ public class QueryTest {
 
         Map<String, Object> eq = new HashMap<>();
         eq.put("verb", FIND);
-        eq.put("q", "clazz:com.tzapps.solrqc");
+        eq.put("q", "clazz:com.tzapps.solrqc.Aco");
 
         assertEquals(eq.get("verb"), q.get("verb"));
         assertEquals(eq.get("q"), q.get("q"));
@@ -54,7 +54,7 @@ public class QueryTest {
                         )));
 
         Map<String, Object> eq = new HashMap<>();
-        eq.put("q", "clazz:com.tzapps.solrqc");
+        eq.put("q", "clazz:com.tzapps.solrqc.Aco");
 
 
         List<String> filters = new ArrayList<>();
@@ -65,7 +65,7 @@ public class QueryTest {
         assertEquals(eq.get("q"), q.get("q"));
     }
 
-    @Test
+    //@Test
     public void run_find_columns() throws Exception {
         Map<String, Object> q = query(
                 s(FIND, s("name", "minPriceDaysBefore"), Aco.class,
@@ -268,7 +268,7 @@ public class QueryTest {
         }
     }
 
-    @Test
+   // @Test
     public void run_where_or_and_x2_conversion_aaa() throws Exception {
         final String name = "as";
         final String description = "asd sa";
