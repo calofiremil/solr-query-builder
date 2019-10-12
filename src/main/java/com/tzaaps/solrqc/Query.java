@@ -1,4 +1,5 @@
-package ro.esolutions.rp.solr;
+package com.tzaaps.solrqc;
+
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

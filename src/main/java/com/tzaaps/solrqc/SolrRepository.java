@@ -1,4 +1,4 @@
-package ro.esolutions.rp.solr;
+package com.tzaaps.solrqc;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -15,8 +15,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static ro.esolutions.rp.solr.SortUtils.toFilterQuery;
-import static ro.esolutions.rp.solr.SortUtils.toSolrField;
 
 @Slf4j
 public class SolrRepository {
@@ -62,37 +60,6 @@ public class SolrRepository {
 				"asc".equals(r[1]) ? SolrQuery.ORDER.asc : SolrQuery.ORDER.desc);
 	}
 
-	public <T> SolrList<T> fromQueryRequest(final QueryRequest queryRequest, Class<T> clazz) throws NoSuchFieldException {
-
-		SolrQuery query = new SolrQuery("clazz:\"" + clazz.getName() + "\"")
-				.setStart(queryRequest.getPageRequest().calculateOffset())
-				.setRows(queryRequest.getPageRequest().getPageSize());
-
-		for (QueryCondition condition : queryRequest.getConditions()) {
-			query.addFilterQuery(toFilterQuery(condition, clazz));
-		}
-
-		for (QuerySort sort : queryRequest.getSortList()) {
-			query.addSort(toSolrField(sort.getColumnName(), clazz), sort.getSortDirection());
-		}
-
-		query.addFilterQuery("deleted_b: false");
-		return query(query, clazz);
-	}
-
-	public <T> SolrList<T> getAll(Class<T> clazz) {
-		SolrQuery query = new SolrQuery("clazz:\"" + clazz.getName() + "\"");
-		return query(query, clazz);
-	}
-
-	public <T> SolrList<T> getById(final String id, final Class<T> clazz) {
-
-		SolrQuery solrQuery = new SolrQuery("clazz:\"" + clazz.getName() + "\"")
-				.addFilterQuery("id:" + clazz.getName() + "/" + id);
-
-		return query(solrQuery, clazz);
-	}
-
 	public <T> SolrList<T> query(final SolrQuery solrQuery, Class<T> clazz) {
 		try {
 			final QueryResponse response = solrClient.query(solrCatalog, solrQuery);
@@ -122,14 +89,4 @@ public class SolrRepository {
 		}
 	}
 
-	public <T> void save(IndexedDocument<T> indexedDocument) {
-		log.info("save: " + indexedDocument);
-		try {
-			solrClient.add(solrCatalog, indexedDocument.solrInputDocument(objectMapper), solrCommitWithinMs);
-		} catch (final IOException ex) {
-			log.error("Failed to add document. Failed to communicate with SOLR server", ex);
-		} catch (final SolrServerException ex) {
-			log.error("Failed to add document. SOLR internal server error", ex);
-		}
-	}
 }

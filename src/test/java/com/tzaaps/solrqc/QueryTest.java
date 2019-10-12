@@ -1,14 +1,13 @@
-package ro.esolutions.rp;
+package com.tzaaps.solrqc;
+
 
 import org.junit.Test;
-import ro.esolutions.rp.aco.domain.Aco;
-import ro.esolutions.rp.acoproductshopquantity.domain.AcoProductShopQuantity;
 
 import java.time.LocalDateTime;
 import java.util.*;
 
-import static org.junit.Assert.assertEquals;
-import static ro.esolutions.rp.solr.Query.*;
+import static com.tzaaps.solrqc.Query.FIND;
+import static com.tzaaps.solrqc.Query.query;
 
 public class QueryTest {
 
