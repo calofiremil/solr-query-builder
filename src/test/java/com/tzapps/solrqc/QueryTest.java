@@ -1,4 +1,4 @@
-package com.tzaaps.solrqc;
+package com.tzapps.solrqc;
 
 
 import org.junit.Test;
@@ -6,7 +6,7 @@ import org.junit.Test;
 import java.time.LocalDateTime;
 import java.util.*;
 
-import static com.tzaaps.solrqc.Query.*;
+import static com.tzapps.solrqc.Query.*;
 import static org.junit.Assert.assertEquals;
 
 public class QueryTest {
@@ -58,7 +58,7 @@ public class QueryTest {
 
 
         List<String> filters = new ArrayList<>();
-        filters.add("id:\"com.tzapps.solrqc/1234\"");
+        filters.add("id:\"com.tzapps.solrqc.Aco/1234\"");
         eq.put("fq", filters);
 
         assertEquals(eq.get("fq"), q.get("fq"));

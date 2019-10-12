@@ -1,4 +1,4 @@
-package com.tzaaps.solrqc;
+package com.tzapps.solrqc;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;

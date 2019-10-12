@@ -1,4 +1,4 @@
-package com.tzaaps.solrqc;
+package com.tzapps.solrqc;
 
 
 import java.time.LocalDate;
@@ -84,7 +84,7 @@ public final class Query {
                 if (selectedAggregate.toString().contains("solrqcs"))
                     entity = Class.forName(selectedAggregate.toString());
                 else
-                    entity = Class.forName("com.tzaaps.solrqc." + selectedAggregate);
+                    entity = Class.forName("com.tzapps.solrqc." + selectedAggregate);
 
                 queryMap.put("q", "clazz:" + entity.getName());
                 queryMap.put("entity", entity);
@@ -188,7 +188,6 @@ public final class Query {
     }
 
     private static String validateFieldAndGetPrefix(String column, Class clazz) throws Exception {
-
         if ("correlationId".equals(column))
             clazz = clazz.getSuperclass();
         if ("aggregateId".equals(column)) {

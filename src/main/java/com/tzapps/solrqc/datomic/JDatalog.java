@@ -1,4 +1,4 @@
-package com.tzaaps.solrqc.datomic;
+package com.tzapps.solrqc.datomic;
 /*
 Java Datalog Engine with Stratified Negation
 

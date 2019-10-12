@@ -1,15 +1,24 @@
-package com.tzaaps.solrqc;
+package com.tzapps.solrqc;
 
 
 import java.time.LocalDateTime;
 
-public class Aco extends Aggregate{
+public class Aco extends Aggregate {
     private String name;
     private String desc;
     private String publicityType;
     private Integer price;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
+    private Integer minPriceDaysBefore;
+
+    public Integer getMinPriceDaysBefore() {
+        return minPriceDaysBefore;
+    }
+
+    public void setMinPriceDaysBefore(Integer minPriceDaysBefore) {
+        this.minPriceDaysBefore = minPriceDaysBefore;
+    }
 
     public LocalDateTime getEndDate() {
         return endDate;

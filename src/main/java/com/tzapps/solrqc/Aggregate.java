@@ -1,4 +1,4 @@
-package com.tzaaps.solrqc;
+package com.tzapps.solrqc;
 
 public class Aggregate {
 

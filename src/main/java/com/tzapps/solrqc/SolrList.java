@@ -1,4 +1,4 @@
-package com.tzaaps.solrqc;
+package com.tzapps.solrqc;
 
 import java.util.ArrayList;
 import java.util.List;

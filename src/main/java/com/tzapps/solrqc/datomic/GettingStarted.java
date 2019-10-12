@@ -1,4 +1,4 @@
-package com.tzaaps.solrqc.datomic;
+package com.tzapps.solrqc.datomic;
 
 // Copyright (c) Cognitect, Inc.
 // All rights reserved.
