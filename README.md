@@ -5,27 +5,27 @@ This is a Solr builder Lisp like for Java and JavaScript inspired by Datomic Dat
 #Java
 ```
  Map<String, Object> q = query(
-                s(FIND, Aco.class,
+                s(FIND, User.class,
                         s(WHERE,
                                 s(OR, s("like", "name", name),
-                                        s(AND, s("=", "description", description), s("gt", "minPriceDaysBefore", 4))),
-                                s("in", "minPriceDaysBefore", Arrays.asList(3, 4, 6))),
+                                        s(AND, s("=", "description", description), s("gt", "age", 18))),
+                                s("in", "bages", Arrays.asList(3, 4, 6))),
                         s(ORDER_BY,
                                 s("name", ASC),
-                                s("minPriceDaysBefore", DESC))));
+                                s("age", DESC))));
 ```
 
 #JavaScript
 ```
             query(
-                [FIND, "Aco",
+                [FIND, "User",
                         [WHERE,
                                 [OR, ["like", "name", name],
-                                        [AND, ["=", "description", description], ["gt", "minPriceDaysBefore", 4]]],
-                                ["in", "minPriceDaysBefore", [3, 4, 6]]],
+                                        [AND, ["=", "description", description], ["gt", "age", 18]]],
+                                ["in", "bages", [3, 4, 6]]],
                         [ORDER_BY,
                                 ["name", ASC],
-                                ["minPriceDaysBefore", DESC]]]];
+                                ["bages", DESC]]]];
 
 
 ```
