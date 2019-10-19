@@ -52,31 +52,10 @@ public class QueryClient {
     public static String id(final Class aggClass, final String aggregateId) {
         return aggClass.getName().concat("/").concat(aggregateId);
     }
-/*
+
     static {
-        paramTypeRefMap.put(MarketingResponsible.class, new ParameterizedTypeReference<List<MarketingResponsible>>() {
+        paramTypeRefMap.put(Aco.class, new ParameterizedTypeReference<List<MarketingResponsible>>() {
         });
-        paramTypeRefMap.put(Aco.class, new ParameterizedTypeReference<List<Aco>>() {
-        });
-        paramTypeRefMap.put(PublicityType.class, new ParameterizedTypeReference<List<PublicityType>>() {
-        });
-        paramTypeRefMap.put(PromotionType.class, new ParameterizedTypeReference<List<PromotionType>>() {
-        });
-        paramTypeRefMap.put(AcoType.class, new ParameterizedTypeReference<List<AcoType>>() {
-        });
-        paramTypeRefMap.put(Campaign.class, new ParameterizedTypeReference<List<Campaign>>() {
-        });
-        paramTypeRefMap.put(Flow.class, new ParameterizedTypeReference<List<Flow>>() {
-        });
-        paramTypeRefMap.put(Task.class, new ParameterizedTypeReference<List<Task>>() {
-        });
-        paramTypeRefMap.put(AcoPoster.class, new ParameterizedTypeReference<List<AcoPoster>>() {
-        });
-        paramTypeRefMap.put(PosterImage.class, new ParameterizedTypeReference<List<PosterImage>>() {
-        });
-        paramTypeRefMap.put(ProductReleve.class, new ParameterizedTypeReference<List<ProductReleve>>() {
-        });
-        paramTypeRefMap.put(AcoProductShopQuantity.class, new ParameterizedTypeReference<List<AcoProductShopQuantity>>() {
-        });
-    }*/
+   
+    }
 }
